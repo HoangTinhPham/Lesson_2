@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Xóa thẻ HTML - freetuts.net</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #noneTr {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>Xóa thẻ HTML</h1>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr id="1">
+                <td>1</td>
+                <td>Tiêu đề thứ nhất</td>
+                <td>
+                    <input type="button" value="Delete"/>
+                </td>
+            </tr>
+            <tr id="2">
+                <td>2</td>
+                <td>Tiêu đề thứ hai</td>
+                <td>
+                    <input type="button" value="Delete"/>
+                </td>
+            </tr>
+            <tr id="3">
+                <td>3</td>
+                <td>Tiêu đề thứ ba</td>
+                <td>
+                    <input type="button" value="Delete"/>
+                </td>
+            </tr>
+            <tr id="">
+                <td>4</td>
+                <td>Tiêu đề thứ tư</td>
+                <td>
+                    <input type="button" value="Delete"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <!-- Hãy viết một đoạn mã Javascript xử lý sự kiện:
+        Khi click vào button nào thì xóa luôn hàng chứa button đó. -->
+    <script>
+        var trElements = document.querySelectorAll('tr');
+        var inputElements = document.querySelectorAll('tr input');
+        for(let i = 0; i < trElements.length; i++) {
+            inputElements[i].onclick = function() {
+                    trElements[i].remove();
+            };
+        }
+
+    </script>
+</html>

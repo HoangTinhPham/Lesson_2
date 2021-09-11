@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thêm thẻ HTML - freetuts.net</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .blue {
+                background-color: pink;
+                text-align: center;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Thêm thẻ HTML</h1>
+ 
+        <input type="text" id="title" value=""/> 
+        <input type="button" id="button_add" value="Add"/>
+         
+        <div id="result"></div>
+    </body>
+    <!-- Hãy viết đoạn mã Javascript khi click Add thì hiển thị nội dung vào thẻ div#result. -->
+    <script>
+        var buttonAdd = document.querySelector('#button_add');
+        var divElement = document.querySelector('#result');
+        var inputTextElement = document.querySelector('#title');
+        inputTextElement.onkeyup = function(e) {
+            inputValue = e.target.value;
+        }
+        setInterval(() => {
+                divElement.classList.toggle('blue');
+            }, 1000);
+        buttonAdd.onclick = function() {
+            divElement.innerText = `${inputValue}`;
+            divElement.style.color = '#fff';
+            divElement.style.fontSize = '50px';
+            divElement.style.textTransform = 'uppercase';
+            divElement.style.width = '50%'  
+        };
+        
+    </script>
+</html>

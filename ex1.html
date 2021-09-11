@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tìm kiếm - freetuts.net</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #search_advance {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+       <h1>Tìm kiếm dữ liệu</h1>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <td>Nhập tiêu đề</td>
+                <td>
+                    <input type="text" id="title" value=""/> <br/>
+                    <a href="https://www.youtube.com/" id="show_search_advance">Tìm kiếm nâng cao</a>
+                </td>
+            </tr>
+            <tr id="search_advance">
+                <td>Chọn chuyên mục</td>
+                <td>
+                    <select id="category">
+                        <option value="1">PHP</option>
+                        <option value="2">Javascript</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" id="btn_search" value="Tìm kiếm"/>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <!-- Yêu cầu bài toán như sau:
+    Bạn hãy viết một đoạn mã Javascript xử lý: Khi click vào chữ "tìm kiếm nâng cao" thì hiển thị chuyên mục,
+    và đồng thời đổi nội dung của của nó lại thành "bỏ tìm kiếm nâng cao".
+    Nếu click tiếp vào "bỏ tìm kiếm nâng cao" thì sẽ ẩn chuyên mục,
+    và đồng thời chuyển nội dung của nó lại thành "tìm kiếm nâng cao". -->
+    <script>
+        var aElement = document.getElementById('show_search_advance');
+
+        aElement.onclick = function(e) {
+            if(aElement.innerText === 'Tìm kiếm nâng cao') {
+                document.querySelectorAll('tr')[1].removeAttribute('id');
+                aElement.innerText = 'Bỏ tìm kiếm nâng cao';
+            } else {
+                document.querySelectorAll('tr')[1].id = 'search_advance';
+                aElement.innerText = 'Tìm kiếm nâng cao';  
+            }
+            e.preventDefault();
+        } 
+    </script>
+</html>
